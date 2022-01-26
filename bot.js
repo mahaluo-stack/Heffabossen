@@ -1,22 +1,18 @@
 const { Client, Intents, MessageEmbed } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
 
-
-const TOKEN = process.env.TOKEN;
-let CHANNEL;
-
 const emojis = require('./asset/emojis');
 const bosslist = require('./asset/bosslist');
 const listHandler = require('./asset/listhandler');
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
+const CHANNEL = client.channels.cache.get(process.env.CHANNEL);
 
 client.on('ready', () => {
 
     try {
 
         console.log(`${client.user.tag} has logged in`);
-        CHANNEL = client.channels.cache.get(process.env.CHANNEL);
 
         (async () => {
             let deleted;
