@@ -58,7 +58,7 @@ client.on('ready', () => {
             { name: 'paladin', value: emojis['paladin']['emoji'] + ' bow' },
             { name: '\u200b', value: '\u200b' }
         )
-        welcomeEmbed.setFooter('visit: ' + 'https://github.com/mahaluo-stack/tibiaBot', ' ', false);
+        welcomeEmbed.setFooter('visit: ' + 'https://github.com/mahaluo-stack/Heffabossen', ' ', false);
     
         return welcomeEmbed;
     }
