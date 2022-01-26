@@ -7,7 +7,7 @@ const CHANNEL = client.channels.cache.get(process.env.CHANNEL);
 
 const emojis = require('./asset/emojis');
 const bosslist = require('./asset/bosslist');
-const listHandler = require('./listHandler');
+const listHandler = require('./asset/listhandler');
 
 client.login(TOKEN);
 
