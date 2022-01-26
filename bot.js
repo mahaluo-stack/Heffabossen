@@ -5,14 +5,11 @@ const emojis = require('./asset/emojis');
 const bosslist = require('./asset/bosslist');
 const listHandler = require('./asset/listhandler');
 
-
 client.destroy();
 client.login(process.env.TOKEN);
 const CHANNEL = process.env.CHANNEL;
 
 client.on('ready', () => {
-
-    
 
     try {
 
@@ -103,7 +100,6 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
-
   
     if (message.author.bot) return
     else if (message.channel.id === CHANNEL) {
