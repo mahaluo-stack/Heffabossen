@@ -23,7 +23,8 @@ module.exports = {
             let time, date, boss;
 
             bosslist.forEach((item) => {
-                if (message.content.includes(item.key)) {
+                let lowerMessage = message.content.toLowerCase();
+                if (lowerMessage.includes(item.key)) {
                     boss = item;
                 }
             });
