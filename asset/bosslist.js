@@ -311,12 +311,5 @@ module.exports = [
         ['free']: 5,
         ['group']: 'single'
     },
-    LORD_LIMPAN = {
-        ['key']: 'bigdick',
-        ['name']: 'limpan bick dickingit',
-        ['blockers']: 3,
-        ['healers']: 2,
-        ['free']: 5,
-        ['group']: 'single'
-    },
+
 ]
