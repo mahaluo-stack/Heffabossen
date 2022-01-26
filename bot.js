@@ -1,23 +1,16 @@
 const emojis = require('./asset/emojis');
 const bosslist = require('./asset/bosslist');
 const listHandler = require('./listHandler');
-const config = require('./config.json');
 
 const { Client, Intents, MessageEmbed } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
-
-const WOODHOUSE = config.WOODHOUSE
-const TEST_CHANNEL = config.TEST_CHANNEL
-
-const HEFFABOSSEN = config.HEFFABOSSEN
-const HEFFA_CHANNEL = config.HEFFA_CHANNEL
 
 let currentChannel;
 
 console.log('Woodhouse is entering the building.. ');
 client.destroy();
-client.login(WOODHOUSE);
-currentChannel = TEST_CHANNEL;
+client.login(process.env.WOODHOUSE);
+currentChannel = process.env.TEST_CHANNEL;
 
 client.on('ready', () => {
 
