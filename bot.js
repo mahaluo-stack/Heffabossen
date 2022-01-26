@@ -6,17 +6,16 @@ const bosslist = require('./asset/bosslist');
 const listHandler = require('./asset/listhandler');
 let CHANNEL;
 
-client.login(process.env.TOKEN).then(() => {
-    CHANNEL = client.channels.cache.get(process.env.CHANNEL);
-});
-
+client.login(process.env.TOKEN);
 
 client.on('ready', () => {
 
+    CHANNEL = client.channels.cache.get(process.env.CHANNEL);
+    
     try {
 
         console.log(`${client.user.tag} has logged in`);
-
+        
         (async () => {
             let deleted;
             do {
