@@ -4,26 +4,29 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const emojis = require('./asset/emojis');
 const bosslist = require('./asset/bosslist');
 const listHandler = require('./asset/listhandler');
-let CHANNEL;
 
+
+client.destroy();
 client.login(process.env.TOKEN);
+const CHANNEL = process.env.CHANNEL;
 
 client.on('ready', () => {
 
-    CHANNEL = client.channels.cache.get(process.env.CHANNEL);
     
+
     try {
 
         console.log(`${client.user.tag} has logged in`);
-        
+        const channel = client.channels.cache.get(CHANNEL);
+
         (async () => {
             let deleted;
             do {
-                deleted = await CHANNEL.bulkDelete(100);
+                deleted = await channel.bulkDelete(100);
             } while (deleted.size != 0);
         })()
             .then(() => {
-                CHANNEL.send({ embeds: [welcomeEmbed()] });
+                channel.send({ embeds: [welcomeEmbed()] });
             })
 
     } catch (error) {
@@ -101,6 +104,7 @@ client.on('ready', () => {
 
 client.on('messageCreate', (message) => {
 
+  
     if (message.author.bot) return
     else if (message.channel.id === CHANNEL) {
 
