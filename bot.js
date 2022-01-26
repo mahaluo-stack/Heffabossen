@@ -3,7 +3,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 
 
 const TOKEN = process.env.TOKEN;
-const CHANNEL = client.channels.cache.get(process.env.CHANNEL);
+let CHANNEL;
 
 const emojis = require('./asset/emojis');
 const bosslist = require('./asset/bosslist');
@@ -16,7 +16,7 @@ client.on('ready', () => {
     try {
 
         console.log(`${client.user.tag} has logged in`);
-        
+        CHANNEL = client.channels.cache.get(process.env.CHANNEL);
 
         (async () => {
             let deleted;
