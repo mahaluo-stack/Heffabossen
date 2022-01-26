@@ -2,8 +2,8 @@
 const timeReg = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
 const today = new Date();
 
-const emojis = require('../asset/emojis');
-const bosslist = require('../asset/bosslist');
+const emojis = require('./asset/emojis');
+const bosslist = require('./asset/bosslist');
 
 module.exports = {
     verify: async function (message) {
