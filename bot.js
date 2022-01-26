@@ -4,9 +4,12 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const emojis = require('./asset/emojis');
 const bosslist = require('./asset/bosslist');
 const listHandler = require('./asset/listhandler');
+let CHANNEL;
 
-client.login(process.env.TOKEN);
-const CHANNEL = client.channels.cache.get(process.env.CHANNEL);
+client.login(process.env.TOKEN).then(() => {
+    CHANNEL = client.channels.cache.get(process.env.CHANNEL);
+});
+
 
 client.on('ready', () => {
 
