@@ -16,7 +16,7 @@ client.on('ready', () => {
         console.log(`${client.user.tag} has logged in`);
         const channel = client.channels.cache.get(CHANNEL);
 
-        channel.send({ embeds: [welcomeEmbed()] });
+        channel.send({ embeds: [welcomeEmbed()] }); 
 
     } catch (error) { 
         console.log('on ready error');
