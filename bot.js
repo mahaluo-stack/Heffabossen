@@ -12,7 +12,7 @@ const CHANNEL = process.env.CHANNEL;
 client.on('ready', () => {
 
     try {
-
+ 
         console.log(`${client.user.tag} has logged in`);
         const channel = client.channels.cache.get(CHANNEL);
 
@@ -97,7 +97,7 @@ client.on('messageCreate', (message) => {
     else if (message.channel.id === CHANNEL) {
 
         try {
-            
+
             listHandler.verify(message).catch((error) => {
                 console.error(error);
             })
