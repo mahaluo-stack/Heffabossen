@@ -97,7 +97,7 @@ client.on('messageCreate', (message) => {
     else if (message.channel.id === CHANNEL) {
 
         try {
-
+            
             listHandler.verify(message).catch((error) => {
                 console.error(error);
             })
@@ -110,7 +110,6 @@ client.on('messageCreate', (message) => {
                     console.log('new listing was made: \n', res);
                     message.channel.send(res);
                 }
-                
             })
             .finally(() => {
                 message.delete();
