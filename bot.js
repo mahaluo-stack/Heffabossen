@@ -18,7 +18,7 @@ client.on('ready', () => {
 
         channel.send({ embeds: [welcomeEmbed()] });
 
-    } catch (error) {
+    } catch (error) { 
         console.log('on ready error');
     }
 
