@@ -311,4 +311,5 @@ module.exports = [
         ['free']: 5,
         ['group']: 'single'
     },
+
 ]
