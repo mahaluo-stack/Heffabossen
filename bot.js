@@ -16,15 +16,7 @@ client.on('ready', () => {
         console.log(`${client.user.tag} has logged in`);
         const channel = client.channels.cache.get(CHANNEL);
 
-        (async () => {
-            let deleted;
-            do {
-                deleted = await channel.bulkDelete(100);
-            } while (deleted.size != 0);
-        })()
-            .then(() => {
-                channel.send({ embeds: [welcomeEmbed()] });
-            })
+        channel.send({ embeds: [welcomeEmbed()] });
 
     } catch (error) {
         console.log('on ready error');
